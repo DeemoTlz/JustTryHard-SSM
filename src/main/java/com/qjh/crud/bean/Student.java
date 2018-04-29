@@ -1,6 +1,6 @@
 package com.qjh.crud.bean;
 
-public class Student {
+public class Student extends Page {
 	private Integer id;
 
 	private String name;
