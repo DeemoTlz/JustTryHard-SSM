@@ -16,23 +16,24 @@ public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	StudentMapper mapper;
-	
-	@Override
+
 	public List<Student> getAll() {
 		return mapper.selectByExampleWithClazz(null);
 	}
 
-	@Override
+	public Student getById(int id) {
+		return mapper.selectByPrimaryKeyWithClazz(id);
+	}
+
 	public int update(Student student) {
 		return mapper.updateByPrimaryKeySelective(student);
 	}
 
-	@Override
 	public void delete(List<Integer> ids) {
 		StudentExample example = new StudentExample();
 		Criteria criteria = example.createCriteria();
 		criteria.andIdIn(ids);
-		
+
 		mapper.deleteByExample(example);
 	}
 

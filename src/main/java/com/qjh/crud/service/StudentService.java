@@ -7,6 +7,8 @@ import com.qjh.crud.bean.Student;
 public interface StudentService {
 
 	public List<Student> getAll();
+	
+	public Student getById(int id);
 
 	public int update(Student student);
 

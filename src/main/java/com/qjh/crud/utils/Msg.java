@@ -64,5 +64,9 @@ public class Msg {
 	public static Msg success(Object data) {
 		return new Msg(200, "success", data);
 	}
+	
+	public static Msg fail(String msg) {
+		return new Msg(400, msg);
+	}
 
 }

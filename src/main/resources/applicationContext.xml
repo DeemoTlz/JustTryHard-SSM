@@ -76,4 +76,6 @@
 	
 	<!-- Spring配置文件的核心点（数据源、与MyBatis的整合、事务控制） -->
 	
+	<import resource="classpath:spring/spring-*.xml"/>
+	
 </beans>
