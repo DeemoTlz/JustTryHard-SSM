@@ -2,6 +2,8 @@ package com.qjh.crud.controller;
 
 import java.util.List;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,7 @@ public class StudentController {
 	@Autowired
 	StudentService service;
 	
+	@RequiresPermissions({"student:_page"})
 	@RequestMapping(value = "/_page", method = RequestMethod.POST)
 	@ResponseBody
 	public PageInfo<Student> page(@RequestBody Student student) {
@@ -33,6 +36,7 @@ public class StudentController {
 		return page;
 	}
 	
+	@RequiresRoles({"admin"})
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	@ResponseBody
 	public Msg update(@PathVariable("id") int id, @RequestBody Student student) {

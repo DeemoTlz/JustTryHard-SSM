@@ -27,7 +27,7 @@
              dataType: "json",
              success: function(data){
 				 if (200 === data.code_) {
-					 alert('登录成功！');
+					 window.location.href="index.jsp"
 				 } else {
 					 alert('登录失败！');
 				 }
