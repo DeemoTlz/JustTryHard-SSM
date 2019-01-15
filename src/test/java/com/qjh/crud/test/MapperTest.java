@@ -20,7 +20,7 @@ import com.qjh.crud.dao.StudentMapper;
  * 推荐Spring的项目就可以使用Spring的单元测试，可以自动注入我们需要的组件
  * 1.导入SpringTest模块
  * 2.@ContextConfiguration指定Spring配置文件的位置
- * 3.直接autowired要使用的组件
+ * 3.直接autowired要使用的组件111
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
