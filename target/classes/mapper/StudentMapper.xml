@@ -9,16 +9,16 @@
     <result column="class_id" jdbcType="INTEGER" property="classId" />
   </resultMap>
   <resultMap id="WithClazzResultMap" type="com.qjh.crud.bean.Student">
-    <id column="student.id" jdbcType="INTEGER" property="id" />
-    <result column="student.name" jdbcType="VARCHAR" property="name" />
-    <result column="student.age" jdbcType="INTEGER" property="age" />
-    <result column="student.sex" jdbcType="BIT" property="sex" />
-    <result column="student.class_id" jdbcType="INTEGER" property="classId" />
-    <association property="Clazz" javaType="com.qjh.crud.bean.Clazz">
-      <id column="class.id" jdbcType="INTEGER" property="id" />
-      <result column="class.name" jdbcType="VARCHAR" property="name" />
-      <result column="class.code" jdbcType="VARCHAR" property="code" />
-      <result column="class.desc" jdbcType="VARCHAR" property="desc" />
+    <id column="s_id" jdbcType="INTEGER" property="id" />
+    <result column="s_name" jdbcType="VARCHAR" property="name" />
+    <result column="s_age" jdbcType="INTEGER" property="age" />
+    <result column="s_sex" jdbcType="BIT" property="sex" />
+    <result column="class_id" jdbcType="INTEGER" property="classId" />
+    <association property="clazz" javaType="com.qjh.crud.bean.Clazz">
+      <id column="c_id" jdbcType="INTEGER" property="id" />
+      <result column="c_name" jdbcType="VARCHAR" property="name" />
+      <result column="c_code" jdbcType="VARCHAR" property="code" />
+      <result column="c_desc" jdbcType="VARCHAR" property="desc" />
     </association>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -103,7 +103,8 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <sql id="withClazz_Column_List">
-    student.id, student.name, student.age, student.sex, student.class_id, class.id, class.name, class.code, class.desc
+    student.id AS 's_id', student.name AS 's_name', student.age AS 's_age', student.sex AS 's_sex', student.class_id,
+	class.id AS 'c_id', class.name AS 'c_name', class.code AS 'c_code', class.desc AS 'c_desc'
   </sql>
   <select id="selectByExampleWithClazz" resultMap="WithClazzResultMap">
     select
@@ -111,7 +112,7 @@
       distinct
     </if>
     <include refid="withClazz_Column_List" />
-    from student left join class on student.id = class.id
+    from student left join class on student.class_id = class.id
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
