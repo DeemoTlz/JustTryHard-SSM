@@ -25,6 +25,7 @@
 				/shiro/login = anon
 				/icon/** = anon
 				/js/** = anon
+				/img/** = anon
 				/logout = logout
 				
 				/user.jsp = authc,roles[user]
