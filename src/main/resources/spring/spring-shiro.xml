@@ -98,7 +98,7 @@
 		<!-- 使用下面配置的缓存管理器 -->
 		<property name="cacheManager" ref="cacheManager" />
 		<property name="sessionManager" ref="sessionManager" />
-		<property name="rememberMeManager" ref="rememberMeManager"></property>
+		<property name="rememberMeManager" ref="rememberMeManager"/>
 	</bean>
 	<!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
 	<bean
