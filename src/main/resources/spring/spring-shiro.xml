@@ -97,7 +97,7 @@
 			</list>
 		</property>
 		<!-- 使用下面配置的缓存管理器 -->
-		<property name="cacheManager" ref="cacheManager" />
+		<property name="cacheManager" ref="shiroCacheManager" />
 		<property name="sessionManager" ref="sessionManager" />
 		<property name="rememberMeManager" ref="rememberMeManager"/>
 	</bean>
@@ -134,9 +134,9 @@
 		<property name="credentialsMatcher" ref="credentialsMatcher2" />
 	</bean>
 
-	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">    
-        <property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml" />    
-    </bean>
+	<!--<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml" />
+    </bean>-->
 	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
