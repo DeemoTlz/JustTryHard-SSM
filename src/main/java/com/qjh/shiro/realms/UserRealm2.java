@@ -33,9 +33,8 @@ public class UserRealm2 extends AuthenticatingRealm {
 
 		ByteSource credentialsSalt = ByteSource.Util.bytes(userName + "");
 		// AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userName, newPassword, this.getName());
-		AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userName, newPassword, credentialsSalt, getName());
 
-		return authcInfo;
+		return new SimpleAuthenticationInfo(userName, newPassword, credentialsSalt, getName());
 	}
 
 }

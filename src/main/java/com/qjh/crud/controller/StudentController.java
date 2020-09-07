@@ -31,9 +31,15 @@ public class StudentController {
 	public PageInfo<Student> page(@RequestBody Student student) {
 		PageHelper.startPage(student.getPageNum(), student.getPageSize());
 		List<Student> list = service.getAll();
-		PageInfo<Student> page = new PageInfo<Student>(list);
-		
-		return page;
+
+		return new PageInfo<Student>(list);
+	}
+
+	@RequiresPermissions({"student:_list"})
+	@RequestMapping(value = "/_list", method = RequestMethod.POST)
+	@ResponseBody
+	public Msg list() {
+		return Msg.success(service.getAll());
 	}
 	
 	@RequiresRoles({"admin"})

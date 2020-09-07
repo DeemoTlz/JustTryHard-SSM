@@ -20,7 +20,9 @@
 	
 	<shiro:hasPermission name="student:_page">
 		<br><br>
-		<a href="student/_page">page</a>
+		<form action="student/_page" method="post">
+			<a href="javascript:void(0);" onclick="submit();">page</a>
+		</form>
 	</shiro:hasPermission>
 	
 	<br><br>
@@ -30,4 +32,18 @@
 	
 </body>
 
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(() => {
+		$.ajax({
+			type: "POST",
+			url: "student/_list",
+			data: $('#form-login').serialize(),
+			dataType: "json",
+			success: function(data){
+				console.log(data);
+			}
+		});
+	});
+</script>
 </html>

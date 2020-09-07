@@ -4,20 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+	img {
+		width: 100%;
+	}
+</style>
 <title>登录</title>
 </head>
-<body>
 
+<body>
 	<h4>Login Page</h4>
+
+	<form id="form-login" action="#">
+		<label>userName: <input type="text" name="userName"></label>
+		<label>password: <input type="text" name="password"></label>
+		<input type="button" id="btn-login" value="提交">
+	</form>
 
 	<img src="img/111.png" alt="111">
 	<img src="img/222.png" alt="222">
-
-	<form id="form-login">
-		userName: <input type="text" name="userName">
-		password: <input type="text" name="password">
-		<input type="button" id="btn-login" value="提交">
-	</form>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>

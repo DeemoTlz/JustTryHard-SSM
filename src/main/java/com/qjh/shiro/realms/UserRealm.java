@@ -39,9 +39,8 @@ public class UserRealm extends AuthorizingRealm {
 
 		ByteSource credentialsSalt = ByteSource.Util.bytes(userName + "");
 		// AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userName, newPassword, this.getName());
-		AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(userName, newPassword, credentialsSalt, getName());
 
-		return authcInfo;
+		return new SimpleAuthenticationInfo(userName, newPassword, credentialsSalt, getName());
 	}
 
 	// 授权需要实现的方法
