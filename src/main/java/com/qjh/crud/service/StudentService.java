@@ -1,8 +1,8 @@
 package com.qjh.crud.service;
 
-import java.util.List;
-
 import com.qjh.crud.bean.Student;
+
+import java.util.List;
 
 public interface StudentService {
 

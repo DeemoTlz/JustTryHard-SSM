@@ -1,17 +1,12 @@
 package com.qjh.shiro.realms;
 
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UnknownAccountException;
+import com.qjh.crud.bean.Student;
+import com.qjh.crud.service.StudentService;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.realm.AuthenticatingRealm;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.qjh.crud.bean.Student;
-import com.qjh.crud.service.StudentService;
 
 public class UserRealm2 extends AuthenticatingRealm {
 

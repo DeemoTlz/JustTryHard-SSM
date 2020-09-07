@@ -1,15 +1,14 @@
 package com.qjh.crud.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.qjh.crud.bean.Student;
 import com.qjh.crud.bean.StudentExample;
 import com.qjh.crud.bean.StudentExample.Criteria;
 import com.qjh.crud.dao.StudentMapper;
 import com.qjh.crud.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
