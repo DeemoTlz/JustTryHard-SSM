@@ -10,7 +10,10 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -34,6 +37,9 @@ public class StudentController {
 	@RequestMapping(value = "/_list", method = RequestMethod.POST)
 	@ResponseBody
 	public Msg list() {
+		HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getRequest();
+		System.out.println("The username in session: " + request.getSession().getAttribute("username"));
+
 		return Msg.success(service.getAll());
 	}
 	
